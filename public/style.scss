@@ -44,6 +44,16 @@ table {
 }
 /*End CSS Reset*/
 
-
-
 /*Start custom*/
+#masonry {
+	position: relative;
+
+	article {
+		position: absolute;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+

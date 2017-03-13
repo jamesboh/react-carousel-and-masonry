@@ -39,22 +39,74 @@ const articles = [{
 }];
 
 export default class Masonry extends Component {
+	constructor (props) {
+		super(props);
+		this.handleImageLoaded = this.handleImageLoaded.bind(this);
+	}
+
+	componentDidMount () {
+		this.handleImageLoaded();
+		window.addEventListener('resize', this.handleImageLoaded);
+	}
+
+	componentWillUnmount () {
+		window.removeEventListener('resize', this.handleImageLoaded);
+	}
+
+	handleImageLoaded () {
+		//media queries
+		let columns;
+		if (window.innerWidth <= 576) {
+			columns = 1;
+		} else if (window.innerWidth <= 768) {
+			columns = 2;
+		} else {
+			columns = 3;
+		}
+
+		const articlesDOM = [...document.getElementsByTagName('article')];
+
+		//initialize width
+		articlesDOM.forEach( article => article.style.width = '' + 100/columns + '%' );
+
+		//object to store position from top with columns as keys
+		let positionsFromTop = {};
+		for ( let i = 0; i < columns; i++ ) {
+			positionsFromTop[i] = 0;
+		}
+
+		//set horizontal positions
+		for ( let i = 0; i < articlesDOM.length; i++ ) {
+			articlesDOM[i].style.left = '' + (100/columns) * (i%columns) + '%';
+		}
+
+		//set vertical positions
+		for ( let i = 0; i < articlesDOM.length; i++ ) {
+			if ( i < columns ) {
+				articlesDOM[i].style.top = positionsFromTop[i];
+			} else {
+				positionsFromTop[i%columns] += articlesDOM[i-columns].offsetHeight;
+				articlesDOM[i].style.top = '' + positionsFromTop[i%columns] + 'px';
+			}
+		}
+	}
 
 	render () {
 		return (
 			<div id="masonry">
 				{
-					articles.map(article => {
+					articles.reverse().map(article => {
 						return (
-							<article key={article.id}>
+							<article key={article.id} ref="article">
 								<div className="featured-image">
-									<img src={article.image} />
+									<img 
+										src={article.image}
+										onLoad={this.handleImageLoaded} />
 								</div>
 								<div className="post-content">
 									<div className="post-header">
-										<h2 className="title">
-											{article.title}
-										</h2>
+										<span className="date">{article.date}</span>
+										<h2 className="title">{article.title}</h2>
 									</div>
 								</div>
 							</article>
