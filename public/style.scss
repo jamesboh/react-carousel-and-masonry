@@ -45,6 +45,61 @@ table {
 /*End CSS Reset*/
 
 /*Start custom*/
+@font-face {
+    font-family: ACaslonPro;
+    src: url("./fonts/ACaslonPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Springville;
+    src: url("./fonts/Springville-Regular3.otf") format("opentype");
+}
+
+h1, h2 {
+	font-family: Springville, serif;
+}
+
+body {
+	font-family: ACaslonPro, serif;
+}
+
+#header {
+    height: 120px;
+    line-height: 120px;
+
+    #logo {
+	    font-size: 34px;
+	    float: left;
+    }
+
+    #nav {
+    	float: right;
+	    width: 230px;
+
+	    li {
+	    	width: 50%;
+	    	float: left;
+	    }
+    }
+
+	#hamburger {
+		width: 30px;
+		height: 26px;
+		z-index: 9999;
+		position: absolute;
+		right: 5px;
+		top: 48px;
+
+		& > div {
+			background: black;
+			height: 2px;
+			margin-bottom: 6px;
+		    float: left;
+		    width: 100%;
+		}
+	}
+}
+
 #carousel {
 	position: relative;
 	overflow: hidden;
