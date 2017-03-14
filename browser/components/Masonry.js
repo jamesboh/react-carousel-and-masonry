@@ -4,37 +4,37 @@ const articles = [{
 	id: 1,
 	title: 'Artisanal iconic cutting edge business class.',
 	date: 'January 12, 2017',
-	image: 'https://designerdoginfo.files.wordpress.com/2013/01/puggle-puppy-4.jpg?w=584',
+	image: '/public/img/Layer 22.jpg',
 	presentedBy: 'Lorem Ipsum'
 }, {
 	id: 2,
 	title: 'K-pop extraordinary.',
 	date: 'January 18, 2017',
-	image: 'https://designerdoginfo.files.wordpress.com/2013/01/puggle-puppy-4.jpg?w=584',
+	image: '/public/img/Layer 21.jpg',
 	presentedBy: 'Lorem Ipsum'
 }, {
 	id: 3,
 	title: 'Esse airport veniam ryokan soft power.',
 	date: 'January 21, 2017',
-	image: 'https://designerdoginfo.files.wordpress.com/2013/01/puggle-puppy-4.jpg?w=584',
+	image: '/public/img/Layer 20.jpg',
 	presentedBy: 'Lorem Ipsum'
 }, {
 	id: 4,
 	title: 'St Moritz uniforms Beams.',
 	date: 'January 27, 2017',
-	image: 'https://designerdoginfo.files.wordpress.com/2013/01/puggle-puppy-4.jpg?w=584',
+	image: '/public/img/Layer 19.jpg',
 	presentedBy: 'Lorem Ipsum'
 }, {
 	id: 5,
 	title: 'Sharp bureaux sleepy K-pop carefully curated.',
 	date: 'February 2, 2017',
-	image: 'https://designerdoginfo.files.wordpress.com/2013/01/puggle-puppy-4.jpg?w=584',
+	image: '/public/img/Layer 18.jpg',
 	presentedBy: 'Lorem Ipsum'
 }, {
 	id: 6,
 	title: 'Bureaux exquisite delightful carefully curated soft power.',
 	date: 'February 10, 2017',
-	image: 'https://designerdoginfo.files.wordpress.com/2013/01/puggle-puppy-4.jpg?w=584',
+	image: '/public/img/Layer 14.jpg',
 	presentedBy: 'Lorem Ipsum'
 }];
 
