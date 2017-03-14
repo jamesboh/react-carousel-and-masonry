@@ -88,7 +88,14 @@ body {
   position: relative;
   overflow: hidden;
   height: 600px; }
-  #carousel #slides {
+  #carousel #slides h1 {
+    font-size: 60px; }
+  #carousel #slides h2 {
+    font-family: ACaslonPro, serif;
+    font-size: 30px; }
+  #carousel #slides p {
+    font-size: 18px; }
+  #carousel #slides img {
     width: 1440px;
     height: 580px;
     margin: auto;
@@ -96,12 +103,16 @@ body {
     top: 0;
     left: -9999px;
     right: -9999px; }
-    #carousel #slides li {
-      display: none; }
-      #carousel #slides li.active {
-        display: block; }
-      #carousel #slides li .hero img {
-        /*width: 100%;*/ }
+  #carousel #slides li {
+    display: none;
+    position: relative; }
+    #carousel #slides li.active {
+      display: block; }
+  #carousel #slides .content {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    color: white; }
   #carousel #nav-dots {
     width: 100%;
     position: absolute;
@@ -133,3 +144,5 @@ body {
     position: absolute; }
     #masonry article img {
       width: 100%; }
+    #masonry article h2 {
+      font-size: 48px; }

@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 
 const heroItems = [{
 	id: 1,
-	h1: 'Screening: DVF Secret Agent Part 1',
+	h1: 'Screening: <br>DVF Secret Agent Part 1',
 	h2: 'October 15, 2017',
 	p: 'Join us for a private screening of DVF Secret Agent Part 2 with our special guest, direct Peter Lindberg',
 	image: '/public/img/hero landing.jpg'
 }, {
 	id: 2,
-	h1: 'Screening: DVF Secret Agent Part 2',
+	h1: 'Screening: <br>DVF Secret Agent Part 2',
 	h2: 'October 15, 2017',
 	p: 'Join us for a private screening of DVF Secret Agent Part 2 with our special guest, direct Peter Lindberg',
 	image: '/public/img/Layer 60.jpg'
 }, {
 	id: 3,
-	h1: 'Screening: DVF Secret Agent Part 3',
+	h1: 'Screening: <br>DVF Secret Agent Part 3',
 	h2: 'October 15, 2017',
 	p: 'Join us for a private screening of DVF Secret Agent Part 2 with our special guest, direct Peter Lindberg',
 	image: '/public/img/Layer 61.jpg'
@@ -120,7 +120,7 @@ export default class Carousel extends Component {
 										<img src={heroItem.image} />
 									</div>
 									<div className="content">
-										<h1>{heroItem.h1}</h1>
+										<h1 dangerouslySetInnerHTML={{ __html: heroItem.h1 }}></h1>
 										<h2>{heroItem.h2}</h2>
 										<p>{heroItem.p}</p>
 									</div>

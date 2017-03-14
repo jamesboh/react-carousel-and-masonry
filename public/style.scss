@@ -106,25 +106,40 @@ body {
 	height: 600px;
 
 	#slides {
-		width: 1440px;
-		height: 580px;
-		margin: auto;
-	    position: absolute;
-	    top: 0;
-	    left: -9999px;
-	    right: -9999px;
+		h1 {
+			font-size: 60px;
+		}
+		h2 {
+			font-family: ACaslonPro, serif;
+			font-size: 30px;
+		}
+		p {
+			font-size: 18px;
+		}
+
+		img {
+			width: 1440px;
+			height: 580px;
+			margin: auto;
+		    position: absolute;
+		    top: 0;
+		    left: -9999px;
+		    right: -9999px;
+		}
 	    
 	    li {
     	    display: none;
+    	    position: relative;
     	    &.active {
     	    	display: block;
     	    }
+	    }
 
-			.hero {
-				img {
-					/*width: 100%;*/
-				}
-			}
+	    .content {
+	    	margin: auto;
+	    	position: absolute;
+	    	top: 0;
+	    	color: white;
 	    }
 	}
 
@@ -167,6 +182,10 @@ body {
 
 		img {
 			width: 100%;
+		}
+
+		h2 {
+			font-size: 48px;
 		}
 	}
 }

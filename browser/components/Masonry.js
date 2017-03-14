@@ -107,6 +107,7 @@ export default class Masonry extends Component {
 									<div className="post-header">
 										<span className="date">{article.date}</span>
 										<h2 className="title">{article.title}</h2>
+										<p>Presented by <a>{article.presentedBy.toUpperCase()}</a></p>
 									</div>
 								</div>
 							</article>
