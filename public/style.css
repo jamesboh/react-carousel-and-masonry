@@ -44,6 +44,49 @@ table {
 
 /*End CSS Reset*/
 /*Start custom*/
+#carousel {
+  position: relative;
+  overflow: hidden;
+  height: 600px; }
+  #carousel #slides {
+    width: 1440px;
+    height: 580px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    right: -9999px; }
+    #carousel #slides li {
+      display: none; }
+      #carousel #slides li.active {
+        display: block; }
+      #carousel #slides li .hero img {
+        /*width: 100%;*/ }
+  #carousel #nav-dots {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    bottom: 0; }
+    #carousel #nav-dots li {
+      margin: 0 6px;
+      display: inline-block;
+      zoom: 1; }
+    #carousel #nav-dots a {
+      width: 11px;
+      height: 11px;
+      display: block;
+      background: #666;
+      background: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      text-indent: -9999px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -o-border-radius: 20px;
+      border-radius: 20px;
+      box-shadow: inset 0 0 3px; }
+
 #masonry {
   position: relative; }
   #masonry article {

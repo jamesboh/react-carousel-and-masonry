@@ -45,6 +45,65 @@ table {
 /*End CSS Reset*/
 
 /*Start custom*/
+#carousel {
+	position: relative;
+	overflow: hidden;
+	height: 600px;
+
+	#slides {
+		width: 1440px;
+		height: 580px;
+		margin: auto;
+	    position: absolute;
+	    top: 0;
+	    left: -9999px;
+	    right: -9999px;
+	    
+	    li {
+    	    display: none;
+    	    &.active {
+    	    	display: block;
+    	    }
+
+			.hero {
+				img {
+					/*width: 100%;*/
+				}
+			}
+	    }
+	}
+
+	#nav-dots {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		z-index: 100;
+		text-align: center;
+		bottom: 0;
+
+		li {
+			margin: 0 6px;
+			display: inline-block;
+			zoom: 1;
+		}
+		a {
+			width: 11px;
+		    height: 11px;
+		    display: block;
+		    background: #666;
+		    background: rgba(0, 0, 0, 0.3);
+		    cursor: pointer;
+		    text-indent: -9999px;
+		    -webkit-border-radius: 20px;
+		    -moz-border-radius: 20px;
+		    -o-border-radius: 20px;
+		    border-radius: 20px;
+		    box-shadow: inset 0 0 3px 
+		}
+	}
+}
+
+
 #masonry {
 	position: relative;
 
