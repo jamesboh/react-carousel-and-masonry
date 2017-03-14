@@ -25,10 +25,22 @@ export default class Carousel extends Component {
 		super(props);
 		this.loopCarousel = this.loopCarousel.bind(this);
 		this.updateActiveSlide = this.updateActiveSlide.bind(this);
+		this.handleSwipe = this.handleSwipe.bind(this);
 	}
 
 	componentDidMount () {
 		this.loopCarousel(0);
+
+		const carousel = document.getElementById('carousel')
+		this.touchstartX = 0;
+		this.touchendX = 0;
+		carousel.addEventListener('touchstart', function(event) {
+		    this.touchstartX = event.changedTouches[0].screenX;
+		}.bind(this), false);
+		carousel.addEventListener('touchend', function(event) {
+		    this.touchendX = event.changedTouches[0].screenX;
+		    this.handleSwipe();
+		}.bind(this), false);
 	}
 
 	loopCarousel (initialSlide) {
@@ -55,9 +67,44 @@ export default class Carousel extends Component {
 		},5000);
 	}
 
+	nextSlide () {
+		if (this.getActiveSlide() === [...document.getElementById('slides').getElementsByTagName('li')].length-1) {
+			this.updateActiveSlide(0)
+		} else {
+			this.updateActiveSlide(this.getActiveSlide()+1)
+		}
+	}
+
+	prevSlide () {
+		if (this.getActiveSlide() === 0) {
+			this.updateActiveSlide([...document.getElementById('slides').getElementsByTagName('li')].length-1)
+		} else {
+			this.updateActiveSlide(this.getActiveSlide()-1)
+		}
+	}
+
 	updateActiveSlide (id) {
 		clearInterval(this.intervalId);
 		this.loopCarousel(id);
+	}
+
+	getActiveSlide () {
+		let activeSlide;
+		[...document.getElementById('slides').getElementsByTagName('li')].forEach( (el,i) => {
+			if (el.className === 'active') { 
+				activeSlide = i; 
+			}
+		})
+		return activeSlide;
+	}
+
+	handleSwipe () {
+		if (this.touchendX < this.touchstartX) {
+		    this.nextSlide();
+		}
+		if (this.touchendX > this.touchstartX) {
+		    this.prevSlide();
+		}
 	}
 
 	render () {
