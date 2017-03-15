@@ -56,32 +56,38 @@ export default class Masonry extends Component {
 	handleImageLoaded () {
 		//media queries
 		let columns;
+		let gutter;
+		let totalContentWidth;
 		if (window.innerWidth <= 576) {
 			columns = 1;
+			gutter = 0;
+			totalContentWidth = 100;
 		} else if (window.innerWidth <= 768) {
 			columns = 2;
+			gutter = 10;
+			totalContentWidth = 90;
 		} else {
 			columns = 3;
+			gutter = 5;
+			totalContentWidth = 90;
 		}
 
 		const articlesDOM = [...document.getElementsByTagName('article')];
 
 		//initialize width
-		articlesDOM.forEach( article => article.style.width = '' + 100/columns + '%' );
+		articlesDOM.forEach( article => article.style.width = '' + totalContentWidth/columns + '%' );
 
 		//object to store position from top with columns as keys
 		let positionsFromTop = {};
 		for ( let i = 0; i < columns; i++ ) {
 			positionsFromTop[i] = 0;
 		}
-
-		//set horizontal positions
+		
 		for ( let i = 0; i < articlesDOM.length; i++ ) {
-			articlesDOM[i].style.left = '' + (100/columns) * (i%columns) + '%';
-		}
-
-		//set vertical positions
-		for ( let i = 0; i < articlesDOM.length; i++ ) {
+			//set horizontal positions
+			articlesDOM[i].style.left = '' + (totalContentWidth/columns + gutter) * (i%columns) + '%';
+			
+			//set vertical positions
 			if ( i < columns ) {
 				articlesDOM[i].style.top = positionsFromTop[i];
 			} else {

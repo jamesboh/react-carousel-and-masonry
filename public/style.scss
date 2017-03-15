@@ -63,9 +63,21 @@ body {
 	font-family: ACaslonPro, serif;
 }
 
+#header-wrapper {
+	position: fixed;
+	z-index: 999;
+	background: white;
+	width: 100%;
+}
+
 #header {
     height: 120px;
     line-height: 120px;
+    max-width: 1162px;
+    margin: auto;
+    position: relative;
+    padding-left: 4px;
+    padding-right: 4px;
 
     #logo {
 	    font-size: 34px;
@@ -73,8 +85,12 @@ body {
     }
 
     #nav {
+    	font-family: Arial, sans-serif;
+	    font-weight: bold;
+    	font-size: 11px;
+    	color: #767676;
     	float: right;
-	    width: 230px;
+        width: 180px;
 
 	    li {
 	    	width: 50%;
@@ -103,18 +119,23 @@ body {
 #carousel {
 	position: relative;
 	overflow: hidden;
-	height: 600px;
+    height: 605px;
+	top: 120px;
 
 	#slides {
 		h1 {
 			font-size: 60px;
+		    margin-bottom: 20px;
 		}
 		h2 {
 			font-family: ACaslonPro, serif;
 			font-size: 30px;
+		    margin-bottom: 16px;
 		}
 		p {
 			font-size: 18px;
+			max-width: 450px;
+			line-height: 1.4;
 		}
 
 		img {
@@ -125,6 +146,9 @@ body {
 		    top: 0;
 		    left: -9999px;
 		    right: -9999px;
+
+		    -webkit-filter: brightness(65%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+		            filter: brightness(65%); /* FF 35+ */
 		}
 	    
 	    li {
@@ -138,8 +162,12 @@ body {
 	    .content {
 	    	margin: auto;
 	    	position: absolute;
-	    	top: 0;
+    	    top: 220px;
 	    	color: white;
+	    	width: 100%;
+	    	max-width: 1162px;
+	    	left: -9999px;
+	    	right: -9999px;
 	    }
 	}
 
@@ -152,23 +180,24 @@ body {
 		bottom: 0;
 
 		li {
-			margin: 0 6px;
+			margin: 0 10px;
 			display: inline-block;
 			zoom: 1;
 		}
 		a {
-			width: 11px;
-		    height: 11px;
+			width: 9px;
+		    height: 9px;
 		    display: block;
-		    background: #666;
-		    background: rgba(0, 0, 0, 0.3);
+		    background: rgba(0, 0, 0, 0.1);
 		    cursor: pointer;
 		    text-indent: -9999px;
 		    -webkit-border-radius: 20px;
 		    -moz-border-radius: 20px;
 		    -o-border-radius: 20px;
 		    border-radius: 20px;
-		    box-shadow: inset 0 0 3px 
+		}
+		li.active > a {
+			background: rgba(0, 0, 0, 0.2);
 		}
 	}
 }
@@ -176,6 +205,10 @@ body {
 
 #masonry {
 	position: relative;
+    top: 200px;
+    width: 100%;
+    max-width: 1162px;
+    margin: auto;
 
 	article {
 		position: absolute;

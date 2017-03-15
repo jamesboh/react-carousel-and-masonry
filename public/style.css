@@ -58,15 +58,30 @@ h1, h2 {
 body {
   font-family: ACaslonPro, serif; }
 
+#header-wrapper {
+  position: fixed;
+  z-index: 999;
+  background: white;
+  width: 100%; }
+
 #header {
   height: 120px;
-  line-height: 120px; }
+  line-height: 120px;
+  max-width: 1162px;
+  margin: auto;
+  position: relative;
+  padding-left: 4px;
+  padding-right: 4px; }
   #header #logo {
     font-size: 34px;
     float: left; }
   #header #nav {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    color: #767676;
     float: right;
-    width: 230px; }
+    width: 180px; }
     #header #nav li {
       width: 50%;
       float: left; }
@@ -87,14 +102,19 @@ body {
 #carousel {
   position: relative;
   overflow: hidden;
-  height: 600px; }
+  height: 605px;
+  top: 120px; }
   #carousel #slides h1 {
-    font-size: 60px; }
+    font-size: 60px;
+    margin-bottom: 20px; }
   #carousel #slides h2 {
     font-family: ACaslonPro, serif;
-    font-size: 30px; }
+    font-size: 30px;
+    margin-bottom: 16px; }
   #carousel #slides p {
-    font-size: 18px; }
+    font-size: 18px;
+    max-width: 450px;
+    line-height: 1.4; }
   #carousel #slides img {
     width: 1440px;
     height: 580px;
@@ -102,7 +122,11 @@ body {
     position: absolute;
     top: 0;
     left: -9999px;
-    right: -9999px; }
+    right: -9999px;
+    -webkit-filter: brightness(65%);
+    /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: brightness(65%);
+    /* FF 35+ */ }
   #carousel #slides li {
     display: none;
     position: relative; }
@@ -111,8 +135,12 @@ body {
   #carousel #slides .content {
     margin: auto;
     position: absolute;
-    top: 0;
-    color: white; }
+    top: 220px;
+    color: white;
+    width: 100%;
+    max-width: 1162px;
+    left: -9999px;
+    right: -9999px; }
   #carousel #nav-dots {
     width: 100%;
     position: absolute;
@@ -121,25 +149,29 @@ body {
     text-align: center;
     bottom: 0; }
     #carousel #nav-dots li {
-      margin: 0 6px;
+      margin: 0 10px;
       display: inline-block;
       zoom: 1; }
     #carousel #nav-dots a {
-      width: 11px;
-      height: 11px;
+      width: 9px;
+      height: 9px;
       display: block;
-      background: #666;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.1);
       cursor: pointer;
       text-indent: -9999px;
       -webkit-border-radius: 20px;
       -moz-border-radius: 20px;
       -o-border-radius: 20px;
-      border-radius: 20px;
-      box-shadow: inset 0 0 3px; }
+      border-radius: 20px; }
+    #carousel #nav-dots li.active > a {
+      background: rgba(0, 0, 0, 0.2); }
 
 #masonry {
-  position: relative; }
+  position: relative;
+  top: 200px;
+  width: 100%;
+  max-width: 1162px;
+  margin: auto; }
   #masonry article {
     position: absolute; }
     #masonry article img {
