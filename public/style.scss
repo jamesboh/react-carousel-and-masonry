@@ -215,11 +215,30 @@ body {
 
 		img {
 			width: 100%;
+		    margin-bottom: 50px;
 		}
 
 		h2 {
 			font-size: 48px;
+			margin-bottom: 22px;
 		}
+
+		p {
+		    margin-bottom: 50px;
+		}
+
+		.post-content {
+			border-bottom: 1px solid #dbdbdb;
+		}
+	}
+
+	.date {
+		font-family: Arial, sans-serif;
+		font-size: 11px;
+		color: #767676;
+	    text-transform: uppercase;
+        margin-bottom: 24px;
+        display: block;
 	}
 }
 

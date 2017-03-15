@@ -175,6 +175,19 @@ body {
   #masonry article {
     position: absolute; }
     #masonry article img {
-      width: 100%; }
+      width: 100%;
+      margin-bottom: 50px; }
     #masonry article h2 {
-      font-size: 48px; }
+      font-size: 48px;
+      margin-bottom: 22px; }
+    #masonry article p {
+      margin-bottom: 50px; }
+    #masonry article .post-content {
+      border-bottom: 1px solid #dbdbdb; }
+  #masonry .date {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #767676;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: block; }
