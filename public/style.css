@@ -58,6 +58,9 @@ h1, h2 {
 body {
   font-family: ACaslonPro, serif; }
 
+a {
+  cursor: pointer; }
+
 #header-wrapper {
   position: fixed;
   z-index: 999;
@@ -157,7 +160,6 @@ body {
       height: 9px;
       display: block;
       background: rgba(0, 0, 0, 0.1);
-      cursor: pointer;
       text-indent: -9999px;
       -webkit-border-radius: 20px;
       -moz-border-radius: 20px;
@@ -184,6 +186,8 @@ body {
       margin-bottom: 50px; }
     #masonry article .post-content {
       border-bottom: 1px solid #dbdbdb; }
+    #masonry article a {
+      border-bottom: 1px solid black; }
   #masonry .date {
     font-family: Arial, sans-serif;
     font-size: 11px;

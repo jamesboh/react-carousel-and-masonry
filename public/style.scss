@@ -63,6 +63,9 @@ body {
 	font-family: ACaslonPro, serif;
 }
 
+a {
+	cursor: pointer;
+}
 #header-wrapper {
 	position: fixed;
 	z-index: 999;
@@ -189,7 +192,6 @@ body {
 		    height: 9px;
 		    display: block;
 		    background: rgba(0, 0, 0, 0.1);
-		    cursor: pointer;
 		    text-indent: -9999px;
 		    -webkit-border-radius: 20px;
 		    -moz-border-radius: 20px;
@@ -229,6 +231,10 @@ body {
 
 		.post-content {
 			border-bottom: 1px solid #dbdbdb;
+		}
+
+		a {
+			border-bottom: 1px solid black;
 		}
 	}
 
